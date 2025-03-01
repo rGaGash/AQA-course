@@ -6,5 +6,20 @@
 const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
+let vowel = 'AEIOU';
+let consonants = 'BCDFGHJKLMNPQRSTUVWXYZ';
+let vowelScore = 0;
+let consonantsScore = 0;
+for(let i = 0; i< word.length;i++){
+    if(vowel.includes(word[i].toUpperCase())){
+        vowelScore++;
+    }
+    else if (consonants.includes(word[i].toUpperCase())){
+        consonantsScore++;
+    }
+}
+
+vowelsAndConsonantsResult = `${word} contains ${vowelScore} vowels and ${consonantsScore} consonants`
+console.log(vowelsAndConsonantsResult)
 
 export { vowelsAndConsonantsResult };
