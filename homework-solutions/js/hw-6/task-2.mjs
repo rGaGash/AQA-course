@@ -13,7 +13,26 @@
   const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 */
 
-let resultUnique;
-let resultNull;
+let resultUnique = [];
+let resultNull = null;
+
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
+const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
+const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+const myPizzas = [...new Set([...myPizzasT1, ...myPizzasT2])];
+
+const toLowerCaseCompititorsPizza = competitorPizzas.map((pizza) =>
+  pizza.toLowerCase()
+);
+const toLowerCaseMyPizza = myPizzas.map((pizza) => pizza.toLowerCase());;
+
+for (let i = 0; i < toLowerCaseMyPizza.length; i++) {
+  if (!toLowerCaseCompititorsPizza.includes(toLowerCaseMyPizza[i])) {
+    resultUnique.push(myPizzas[i]);
+  }
+}
+if(resultUnique.length === 0){
+  resultNull = null;
+}
 
 export { resultNull, resultUnique };
