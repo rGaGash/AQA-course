@@ -9,7 +9,16 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  if (typeof number !== 'number') {
+    return false;
+  }
+  if (number <= 9) {
+    return number;
+  }
+  const num = number.toString().split('');
+  const result = num.reduce((acc, num) => acc + Number(num), 0);
+  return digitalRoot(result);
 }
+console.log(digitalRoot(112312312));
 
 export { digitalRoot };
