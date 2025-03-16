@@ -24,7 +24,7 @@ let map = numbers.map((el) => el - numbers.length);
 let filter = numbers.filter((el, i) => el > numbers[i - 1]);
 let find = numbers.find((el, i) => el === i);
 let sort = [...numbers.sort((a, b) => a - b)];
-let reduce = numbers.reduce((acc, el) => acc + el, 0);
+let reduce = numbers.every((el) => el.toString().length == 2);
 let some = numbers.some((el) => el > 90);
 let every = numbers.every((el) => el.length == 2);
 
