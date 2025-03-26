@@ -8,16 +8,15 @@
   Значение добавьте в массив 'forOf' 
 */
 const forOf = [];
-const numbers = [1,2,3,4,5,6,7,8,9,10]
-for(const number of numbers){
-    if(number % 2 === 0){
-        forOf.push(number**2)
-    }else{
-        forOf.push(number**3)
-    }
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (const number of numbers) {
+  if (number % 2 === 0) {
+    forOf.push(number ** 2);
+  } else {
+    forOf.push(number ** 3);
+  }
 }
-console.log(forOf)
-
+console.log(forOf);
 
 /*
 2. Методы массивов
@@ -30,7 +29,7 @@ console.log(forOf)
   В результате вы должны получить массив [0, 1, 3, 4, 5], присвойте в переменную "result"
 */
 
-let num = [1,2,3,4,5];
+let num = [1, 2, 3, 4, 5];
 num.push(6);
 num.unshift(0);
 num.splice(2, 1);
@@ -61,9 +60,9 @@ console.log(rest);
 
   Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
 */
-const numbers2 = [1,2,3,4,5];
+const numbers2 = [1, 2, 3, 4, 5];
 const numbers3 = [6, 7, 8, 9, 10];
 const mergedArray = [...numbers2, ...numbers3];
-console.log(mergedArray)
+console.log(mergedArray);
 
 export { forOf, result, first, second, rest, mergedArray };

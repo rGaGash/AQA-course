@@ -14,23 +14,47 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
+  if (typeof character.name !== 'string' || typeof character.age !== 'number') {
+    throw new Error('Invalid input: name must be a string and age must be a number');
+  }
+  characters.push(character);
+  return character;
 }
 
 function getCharacter(name) {
+  const character = characters.find((char) => char.name === name);
+  return character;
   // Ваш код
 }
 
 function getCharactersByAge(minAge) {
+  if (typeof minAge !== 'number' || isNaN(minAge)) {
+    throw new Error('Invalid input');
+  }
+  const charactersAge = characters.filter((char) => char.age >= minAge);
+  return charactersAge;
   // Ваш код
 }
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+  const getName = getCharacter(name);
+  const getIndex = characters.findIndex((char) => char.name === name);
+  if (getIndex === -1) {
+    throw new Error('Invalid input');
+  }
+  characters[getIndex] = { ...getName, ...newCharacter };
+  return characters[getIndex];
 }
 
+console.log(updateCharacter('Jack', { age: 32, name: 'dudush' }));
+
 function removeCharacter(name) {
-  // Ваш код
+  const getIndex = characters.findIndex((char) => char.name === name);
+  if (getIndex === -1) {
+    throw new Error('Invalid input');
+  }
+  const slicedCharacter = characters.splice(getIndex, 1)[0];
+  return slicedCharacter;
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
